@@ -5,7 +5,8 @@ import "graphql-import-node";
 import resolvers from "./resolvers/resolversMap";
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 
-const typeDefs = loadSchemaSync("./**/*.graphql", {
+// VERCEL NO SOPORTA  dynamic loaders COMO ESTE, ASÍ QUE DEBO CAMBIARLO
+const typeDefs = loadSchemaSync("./schemas/**/*.graphql", {
 	loaders: [new GraphQLFileLoader()],
 });
 
