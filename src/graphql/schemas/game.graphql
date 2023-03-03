@@ -1,0 +1,20 @@
+type Query {
+	getGames: [Game]
+}
+
+type Mutation {
+	createGame(game: NewGameInput!): String!
+}
+
+type Game {
+	_id: ID
+	title: String
+	cover: String
+	developers: [Developer]
+}
+
+input NewGameInput {
+	title: String!
+	cover: String!
+	developers: [String!]!
+}
